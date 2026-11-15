@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8faf8">
+<title>ذِكــر | أذكارٌ تُطمئن القلوب</title>
+<style>
+:root{--ink:#26352e;--muted:#718078;--green:#557765;--pale:#edf3ee;--line:#e6ece7;--white:#fff;--gold:#b99b63}
+*{box-sizing:border-box}body{margin:0;background:#f8faf8;color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+header{background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+.nav{max-width:1100px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-size:27px;font-weight:bold;color:var(--green);letter-spacing:1px}.brand small{display:block;font-size:10px;letter-spacing:0;color:var(--muted);font-weight:normal;margin-top:-8px}
+nav{display:flex;gap:7px;flex-wrap:wrap}nav button,.menu-btn{border:0;background:transparent;color:var(--muted);padding:9px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:13px}nav button.active,nav button:hover{background:var(--pale);color:var(--green)}
+main{max-width:1000px;margin:35px auto;padding:0 20px}.hero{background:linear-gradient(135deg,#edf4ee,#f8f7f1);border:1px solid #e7eee8;border-radius:25px;padding:42px 28px;text-align:center;position:relative;overflow:hidden}
+.crescent{font-size:30px;color:var(--gold);margin-bottom:4px}.hero h1{font-size:clamp(28px,5vw,43px);margin:0 0 8px;color:#3f6651}.hero p{margin:0;color:var(--muted)}
+.quote{margin:20px auto 0;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;max-width:620px;color:#52695a}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:32px 2px 15px}.section-title h2{font-size:21px;margin:0}.hint{font-size:12px;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px}
+.tile{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;text-align:right;cursor:pointer;transition:.2s;color:var(--ink);font:inherit}.tile:hover{transform:translateY(-3px);border-color:#cbdacf;box-shadow:0 8px 24px #304d3910}.tile .symbol{font-size:22px;color:var(--green)}.tile strong{display:block;margin:5px 0}.tile span{font-size:12px;color:var(--muted)}
+.panel{display:none}.panel.active{display:block}.back{border:0;background:transparent;color:var(--green);cursor:pointer;font:inherit;margin:0 0 12px}
+.dhikr{background:white;border:1px solid var(--line);border-radius:19px;padding:22px;margin:13px 0}.dhikr-text{font-size:21px;line-height:2.1;color:#35483d;margin:0 0 12px}.source{font-size:12px;color:var(--muted);margin-bottom:15px}.actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.count{background:var(--pale);border:1px solid #dce8df;color:#42644e;padding:8px 17px;border-radius:22px;cursor:pointer;font:inherit}.count.done{background:#e6eee8}.small-btn{border:1px solid var(--line);background:white;border-radius:20px;padding:7px 13px;color:var(--muted);cursor:pointer;font:inherit;font-size:12px}.progress{height:5px;background:#edf1ed;border-radius:10px;margin-top:15px;overflow:hidden}.bar{height:100%;background:#8aa795;width:0;transition:.2s}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:35px 15px 25px}
+.about{background:white;border:1px solid var(--line);padding:23px;border-radius:18px}
+@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.nav nav{width:100%;overflow-x:auto;flex-wrap:nowrap}.nav nav button{white-space:nowrap}.hero{padding:32px 18px}main{margin:22px auto}.dhikr-text{font-size:18px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="brand">ذِكــر<small>أذكارٌ تُطمئن القلوب</small></div>
+<nav aria-label="القائمة الرئيسية">
+<button class="active" data-page="home">الرئيسية</button>
+<button data-page="morning">أذكار الصباح</button>
+<button data-page="evening">أذكار المساء</button>
+<button data-page="prayer">بعد الصلاة</button>
+<button data-page="sleep">النوم والاستيقاظ</button>
+<button data-page="about">عن الموقع</button>
+</nav></div></header>
+<main>
+<section id="home" class="panel active">
+<div class="hero"><div class="crescent">☾</div><h1>أذكارٌ تُطمئن القلوب</h1><p>مساحة هادئة تذكّرك بذكر الله في يومك</p>
+<div class="quote" id="daily">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾<br><small>سورة الرعد، الآية ٢٨</small></div></div>
+<div class="section-title"><h2>اختر وردك اليوم</h2><span class="hint">ابدأ بما تيسّر لك</span></div>
+<div class="tiles">
+<button class="tile" data-open="morning"><div class="symbol">☀</div><strong>أذكار الصباح</strong><span>لبداية يوم عامر بالذكر</span></button>
+<button class="tile" data-open="evening"><div class="symbol">☾</div><strong>أذكار المساء</strong><span>لختام يومك بالطمأنينة</span></button>
+<button class="tile" data-open="prayer"><div class="symbol">۞</div><strong>أذكار بعد الصلاة</strong><span>أذكار ما بعد الفريضة</span></button>
+<button class="tile" data-open="sleep"><div class="symbol">✧</div><strong>أذكار النوم والاستيقاظ</strong><span>لذكرك قبل النوم وعند الاستيقاظ</span></button>
+</div></section>
+<section id="morning" class="panel"><button class="back" data-open="home">← الرئيسية</button><div class="section-title"><h2>أذكار الصباح</h2><span class="hint">اضغط على العداد بعد كل قراءة</span></div><div id="morning-list"></div></section>
+<section id="evening" class="panel"><button class="back" data-open="home">← الرئيسية</button><div class="section-title"><h2>أذكار المساء</h2><span class="hint">اضغط على العداد بعد كل قراءة</span></div><div id="evening-list"></div></section>
+<section id="prayer" class="panel"><button class="back" data-open="home">← الرئيسية</button><div class="section-title"><h2>أذكار بعد الصلاة</h2><span class="hint">بعد السلام من الصلاة المفروضة</span></div><div id="prayer-list"></div></section>
+<section id="sleep" class="panel"><button class="back" data-open="home">← الرئيسية</button><div class="section-title"><h2>أذكار النوم والاستيقاظ</h2></div><div id="sleep-list"></div></section>
+<section id="about" class="panel"><button class="back" data-open="home">← الرئيسية</button><div class="section-title"><h2>عن ذِكــر</h2></div><div class="about"><p><strong>ذِكــر</strong> موقع بسيط يسهّل الوصول إلى الأذكار اليومية بتصميم هادئ وواضح، على الجوال والكمبيوتر.</p><p>يمكنك استخدام عدّاد التكرار ونسخ الذكر بسهولة. نحرص على ذكر مصدر الأذكار، ويُستحسن مراجعة النصوص مع المصادر المعتمدة قبل اعتماد الموقع للنشر العام.</p><p><strong>المصادر المقترحة للمراجعة:</strong> القرآن الكريم، صحيح البخاري، صحيح مسلم، وكتاب حصن المسلم للشيخ سعيد بن وهف القحطاني.</p></div></section>
+</main>
+<footer>ذِكــر · أذكارٌ تُطمئن القلوب</footer>
+<script>
+const data={
+morning:[
+["أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ. رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ.","صحيح مسلم","1"],
+["اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ.","سنن الترمذي","1"],
+["رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا.","سنن أبي داود والترمذي — ثلاث مرات","3"],
+["قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ.","سورة الإخلاص — ثلاث مرات","3"],
+["قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ.","سورة الفلق — ثلاث مرات","3"],
+["قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَهِ النَّاسِ ۝ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ.","سورة الناس — ثلاث مرات","3"]
+],
+evening:[
+["أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ. رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا.","صحيح مسلم","1"],
+["اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ.","سنن الترمذي","1"],
+["رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا.","سنن أبي داود والترمذي — ثلاث مرات","3"],
+["قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ.","سورة الإخلاص — ثلاث مرات","3"],
+["قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ.","سورة الفلق — ثلاث مرات","3"],
+["قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَهِ النَّاسِ ۝ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ.","سورة الناس — ثلاث مرات","3"]
+],
+prayer:[
+["أَسْتَغْفِرُ اللَّهَ.","صحيح مسلم — ثلاث مرات","3"],
+["اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ.","صحيح مسلم","1"],
+["سُبْحَانَ اللَّهِ.","صحيح مسلم — ثلاث وثلاثون مرة","33"],
+["الْحَمْدُ لِلَّهِ.","صحيح مسلم — ثلاث وثلاثون مرة","33"],
+["اللَّهُ أَكْبَرُ.","صحيح مسلم — ثلاث وثلاثون مرة","33"],
+["لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.","صحيح مسلم — ويُتمّ المئة بالتهليل الوارد","1"]
+],
+sleep:[
+["بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا.","صحيح البخاري","1"],
+["الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ.","صحيح البخاري — عند الاستيقاظ","1"],
+["يجمع كفّيه ثم ينفث فيهما ويقرأ: قُلْ هُوَ اللَّهُ أَحَدٌ، وقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ، وقُلْ أَعُوذُ بِرَبِّ النَّاسِ، ثم يمسح بهما ما استطاع من جسده.","صحيح البخاري — ثلاث مرات قبل النوم","3"]
+]};
+function renderList(key){const el=document.getElementById(key+'-list');el.innerHTML='';data[key].forEach((item,i)=>{const target=Number(item[2]);const card=document.createElement('article');card.className='dhikr';card.innerHTML=`<p class="dhikr-text"></p><div class="source"></div><div class="actions"><button class="count">تمت القراءة <b>0</b> / ${target}</button><button class="small-btn copy">نسخ الذكر</button><span class="hint status"></span></div><div class="progress"><div class="bar"></div></div>`;card.querySelector('.dhikr-text').textContent=item[0];card.querySelector('.source').textContent='المصدر: '+item[1];let n=0;const count=card.querySelector('.count');count.addEventListener('click',()=>{if(n<target)n++;count.querySelector('b').textContent=n;card.querySelector('.bar').style.width=(n/target*100)+'%';if(n===target){count.classList.add('done');card.querySelector('.status').textContent='أحسنت، اكتمل العدد';}});card.querySelector('.copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(item[0]);card.querySelector('.status').textContent='تم نسخ الذكر';}catch(e){card.querySelector('.status').textContent='يمكنك تحديد النص ونسخه';}});el.appendChild(card);});}
+Object.keys(data).forEach(renderList);
+function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.open)));
+</script>
+</body></html>
